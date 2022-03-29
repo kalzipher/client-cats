@@ -3,18 +3,30 @@
   flex-wrap: wrap;
   padding: 0 4px;
 }
-
-/* Create four equal columns that sits next to each other */
-.column {
-    flex: calc(20% - 8px);
-    max-width: calc(20% - 8px);
-    padding: 4px;
+p {
+  text-shadow: none;
 }
 
-.column img {
-  margin-top: 8px;
+/* Create four equal columns that sits next to each other */
+.item {
+  flex: calc(20% - 8px);
+  max-width: calc(20% - 8px);
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.item img {
+  margin: 16px 0;
   vertical-align: middle;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: 4px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */

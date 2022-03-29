@@ -1,5 +1,12 @@
-<div class="row">
-    <div *ngFor="let cat of images" class="column">
-        <img [src]="cat.url">
+<div>
+    <br />
+    <button type="button" (click)="getMore()">Generar</button>
+    <div class="row">
+        <div *ngFor="let cat of images" class="item">
+            <img [src]="cat.url">
+            <button type="button" class="btn" (click)="markAsFavorite(cat)">
+                agregar a favoritos
+            </button>
+        </div>
     </div>
 </div>

@@ -1,0 +1,23 @@
+<h2>
+    Crear gato
+</h2>
+<br />
+<button type="button" routerLink="/gatos">
+    regresar
+</button>
+
+<div class="container">
+    <form [formGroup]="formCat" (ngSubmit)="onSubmit(formCat)">
+        <input formControlName="name" placeholder="Nombre">
+        <input formControlName="breed" placeholder="Raza">
+        <input formControlName="age" placeholder="Edad">
+        <p>Selecciona una imagen</p>
+        <img [src]="formCat.get('photo')?.value" class="img-cat-selected" [hidden]="!formCat.get('photo')?.value">
+        <button type="submit" [disabled]="isSaving">
+            {{ isSaving ? "Guardando" : "Guardar" }}
+        </button>
+    </form>
+    <div class="gallery">
+        <img [src]="cat.image.url" *ngFor="let cat of favorites" (click)="selectPhoto(cat.image.url)">
+    </div>
+</div>

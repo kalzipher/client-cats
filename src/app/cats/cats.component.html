@@ -1,0 +1,19 @@
+<h2>Gatos</h2>
+<br />
+<button type="button" [routerLink]="['crear']" >crear gato</button>
+<div class="container">
+    <div *ngFor="let cat of cats; index as i" class="container-cat">
+        <img [src]="cat.photo">
+        <p>{{ cat.name }}</p>
+        <p>{{ cat.breed }}</p>
+        <p>{{ cat.age }}</p>
+        <div class="controls">
+            <button type="button" [routerLink]="['crear']" [queryParams]="{ 'id':cat.id }">
+                edit
+            </button>
+            <button type="button" class="btn-delete" (click)="deleteCat(cat.id, i)">
+                delete
+            </button>
+        </div>
+    </div>
+</div>

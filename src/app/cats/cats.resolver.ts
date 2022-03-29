@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CatService } from '../services/cat.service';
-import { ICatImage } from '../services/cats.interface';
+import { ICat } from '../services/cats.interface';
 
 @Injectable()
-export class ImagesResolver implements Resolve<any> {
+export class CatsResolver implements Resolve<ICat[]> {
 
   constructor(
     private readonly catService: CatService
   ) {}
 
-  resolve(): Observable<ICatImage[]> {
-    return this.catService.getCatsImages(); 
+  resolve(): Observable<ICat[]> {
+    return this.catService.getCats();
   }
 }
